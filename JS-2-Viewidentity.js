@@ -80,6 +80,7 @@ $(".footer-btn").eq(0).click(function(){
     if (b== d + 0.5) {
         b = d - 0.5
         c = d
+        phrasel[0].innerHTML = "词组："+ Phrase[d-1]
         $('.footer-btn').eq(0).html("法官查看")
         $(".footer-btn").eq(0).click(function(){
            window.location.href = "Judge'sDiary.html"; 
