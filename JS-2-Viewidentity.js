@@ -78,6 +78,8 @@ $(".footer-btn").eq(0).click(function(){
     }
     //当等于人数时停止传递下一位
     if (b== d + 0.5) {
+        b = d - 0.5
+        c = d
         $('.footer-btn').eq(0).html("法官查看")
         $(".footer-btn").eq(0).click(function(){
            window.location.href = "Judge'sDiary.html"; 
