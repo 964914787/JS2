@@ -57,8 +57,7 @@ for (var bb = 0; bb < Nunshuzi; bb++) {
 }
 
 //接受的死亡平民人数
-var civiliandiezzz = sessionStorage.getItem('civiliandie') || 0 ;
-console.log(civiliandiezzz)
+
 existence = existencellll;
 console.log(civiliandie)
 //创建被点击的号数，用于传递结算页面
@@ -83,7 +82,7 @@ $(".cards").click(function(){
             sessionStorage.setItem('shengsi',JSON.stringify(existence))
             allDeath.push(m) 
             sessionStorage.setItem("allDeath", JSON.stringify(allDeath))
-            if ( civiliandiezzz == y ) {
+            if ( civiliandie == y ) {
                 window.location = "JS-4-4.html"; 
             } else {
                 window.location = "JS-2-Taiwaneseversion.html"; 
