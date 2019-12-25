@@ -18,7 +18,8 @@ console.log(civiliandie)
 
 
 //判断游戏天数增加文字框
-for (let i = 0; i < day-1; i++) {
+if (allDeath.length % 2 == 0) {
+    for (let i = 0; i < day-1; i++) {
     $("#zengjia").append(
         `<div class="box2">
             <div class="box3">
@@ -29,9 +30,25 @@ for (let i = 0; i < day-1; i++) {
                 <p>白天：`+ allDeath[(i+1)*2-1] +`号被全民投票投死，`+ allDeath[(i+1)*2-1] +`号是`+ arrayone[(allDeath[(i+1)*2-1])-1] +`</p>
             </div>
         </div>`
-    )  
+    ) 
 }
-if( civiliandie == y ) {
+}
+
+if (allDeath.length % 2 == 1) {
+    if( civiliandie == y ) {
+        for (let i = 0; i < day-1; i++) {
+            $("#zengjia").append(
+                `<div class="box2">
+                    <div class="box3">
+                        <p class="box3-word">第`+(i+1)+`天</p>
+                    </div>
+                    <div class="box4">
+                        <p style="margin-bottom: 0.5rem">晚上：`+allDeath[(i+1)*2-2] +`号被杀手杀死，`+allDeath[(i+1)*2-2] +`号是`+ arrayone[(allDeath[(i+1)*2-2])-1] +`</p>
+                        <p>白天：`+ allDeath[(i+1)*2-1] +`号被全民投票投死，`+ allDeath[(i+1)*2-1] +`号是`+ arrayone[(allDeath[(i+1)*2-1])-1] +`</p>
+                    </div>
+                </div>`
+            ) 
+        }
     for (let i = day; i <= day; i++) {
         $("#zengjia").append(
             `<div class="box2">
@@ -39,13 +56,15 @@ if( civiliandie == y ) {
                     <p class="box3-word">第`+(i)+`天</p>
                 </div>
                 <div class="box4">
-                    <p style="margin-bottom: 0.5rem">晚上：`+allDeath[(i*2)-2] +`号被杀手杀死，`+allDeath[(i*2)-2] +`号是`+ arrayone[(allDeath[i*2-2])-1] +`</p>  
+                    <p style="margin-bottom: 0.5rem">晚上：`+allDeath[(i*2)-2] +`号被杀手杀死，`+allDeath[(i*2)-2] +`号是`+ arrayone[(allDeath[i*2-2])-1] +`</p>
+                    
                 </div>
             </div>`
         ) 
         console.log(allDeath)
         console.log(i)
     }
+}
 }
 //判断胜利者修改页面文字
 if ( ghostdie == x ) {
